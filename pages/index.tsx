@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { Contador } from '../components/Contador';
 import styles from '../styles/Home.module.css';
+import { Like } from '../components/Like';
 
 export default function Home() {
   return (
