@@ -9,6 +9,7 @@ export default function Home() {
     <div className={styles.container}>
       Olá turma!
       <Link href="/lista">Ver a lista</Link>
+      <Link href="/amigos">Ver amigos</Link>
       <Contador valorInicial={1} />
       <Contador valorInicial={10} />
       //https://github.com/mauricioschiavo-setrem/CTI-2023-2
