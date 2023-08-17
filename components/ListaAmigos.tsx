@@ -1,12 +1,13 @@
 import { useState } from 'react';
+import { Amigo } from './Amigo';
 
-export interface Amigo {
+export interface AmigoInterface {
   nome: string;
   telefone: string;
 }
 
 export function ListaAmigos() {
-  const [amigos, setAmigos] = useState([] as Amigo[]);
+  const [amigos, setAmigos] = useState([] as AmigoInterface[]);
   const [nome, setNome] = useState('');
   const [telefone, setTelefone] = useState('');
 
@@ -17,7 +18,7 @@ export function ListaAmigos() {
     setNome('');
   }
 
-  function RemoverAmigo(amigo: Amigo) {
+  function RemoverAmigo(amigo: AmigoInterface) {
     const novaLista = amigos.filter((x) => x != amigo);
     setAmigos(novaLista);
   }
@@ -27,19 +28,9 @@ export function ListaAmigos() {
       <input value={nome} onChange={(e) => setNome(e.target.value)} />
       <input value={telefone} onChange={(e) => setTelefone(e.target.value)} />
       <button onClick={AdicionarAmigo}>Adicionar</button>
-      <ul>
-        {amigos.map((amigo) => {
-          return (
-            <li>
-              {amigo.nome} ({amigo.telefone}){' '}
-              <span
-                onClick={() => {
-                  RemoverAmigo(amigo);
-                }}> X </span>
-            </li>
-          );
-        })}
-      </ul>
+      {amigos.map((amigo) => {
+        return <Amigo amigo={amigo} />;
+      })}
     </>
   );
 }

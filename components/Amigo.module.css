@@ -1,0 +1,9 @@
+.amigo {
+  background: #e4e4e4;
+  padding: 1rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  margin: 0.5rem;
+}
+.amigo h3 {
+  margin: 0;
+}
